@@ -75,4 +75,12 @@ public class Shoe {
         ", size=" + size +
         '}';
   }
+
+  public static void main (String[] args ){
+    Shoe myshoe = new Shoe("sneaker","black","nike",35);
+
+    System.out.print(myshoe);
+
+  }
 }
+
