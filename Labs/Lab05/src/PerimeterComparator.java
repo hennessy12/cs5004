@@ -5,13 +5,13 @@ import java.util.Comparator;
  */
 public class PerimeterComparator implements Comparator<Shape> {
 
-    public int compare(Shape a, Shape b){
-        if (a.perimeter() < b.perimeter()){
-            return -1;
-        } else if (a.perimeter() == b.perimeter()){
-            return 0;
-        } else {
-            return 1;
-        }
+  public int compare(Shape x, Shape y) {
+    if (x.perimeter() < y.perimeter()) {
+      return -1;
+    } else if (x.perimeter() == y.perimeter()) {
+      return 0;
+    } else {
+      return 1;
     }
+  }
 }
