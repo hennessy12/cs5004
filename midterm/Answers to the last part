@@ -1,0 +1,31 @@
+Examine the three Class Diagrams provided, and answer the
+   following questions, by editing in your responses below after ">>>".
+   
+    a. What is a good reason for a design such as  DiagramII, versus
+       the simpler version in DiagramI?
+    >>> II has a AbstractShape class. The AbstractShape is an Abstract Class. This class likely provides some default implementations or common attributes for shapes. It includes a reference (a Point2D object) and implementations for distOrOrigin() (might be a typo for distToOrigin()) and compareTo().
+This made the whole project easier to organize, as we can reuse the functions and methods we built. As consolidate all the method into AbstractShape, we can create new shapes easily by letting all the shapes inherit the functions and methods, instead of repeating everything again and again. 
+    
+    b. Try to infer what the "#" sign must mean in DiagramII. Why does this
+       matter?
+    >>> The "#" symbol in front of reference in the AbstractShape class indicates that this attribute is protected/protected visibility in UML. It means that the reference attribute:
+
+Is accessible within the AbstractShape class itself.
+Is accessible by any subclass (child class) of AbstractShape (like Circle and Rectangle).
+Is NOT directly accessible from outside the class hierarchy (i.e., by other unrelated classes).
+It matters for several reasons:
+
+Encapsulation and Data Hiding: It enforces encapsulation by preventing direct access to the reference from outside the class hierarchy. This protects the internal state of the AbstractShape and its subclasses.
+
+Code Reusability and Inheritance: Subclasses like Circle and Rectangle can directly access and use the reference attribute without needing to implement their own copy. This promotes code reusability and simplifies inheritance.
+
+Flexibility and Control: It allows the AbstractShape to manage a shared attribute (reference) that is relevant to all its subclasses, while still controlling access to it.
+
+    c. Which links(s) in DiagramI should use a dark diamond arrowhead to
+       indicate a "has a" link?
+    >>> a Circle has a center which is a Point2D, so arrow head should be Point2D to Circle. a Rectangle has a lowerLeft which is a Point2D, so arrow head should be Point2D to Rectangle. 
+
+    
+    d. Which arrow in DiagramIII (x, y, or z) creates a "self-referential" structure?
+    >>> The arrow z in the ElementNode class creates a self-referential structure. A self-referential structure is a structure that contains a reference to itself. ElementNode has a rest attribute that refers to another 1List, which can be an ElementNode itself, which in turn could be another ElementNode (or an EmptyNode). This allows us to create a linked list structure where each element form recursive or self-referential relationship. x and y are inheritance relationships.
+
