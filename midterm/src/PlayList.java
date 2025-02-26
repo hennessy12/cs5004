@@ -57,15 +57,22 @@ public class PlayList {
 
   /**
    * Sorts the PlayList by title, ignoring case.
+   * <p></p>
+   * This method uses the natural ordering of Tunes, which is defined by the
+   * `compareTo` method in the `AbstractTune` class.
    */
   void sortByTitle() {
+    // Use Collections.sort with the natural ordering of Tunes (based on title)
     Collections.sort(myPlayList);
   }
 
   /**
    * Sorts the PlayList by tempo.
+   * <p></p>
+   * This method uses a custom `TempoComparator` to sort tunes by their tempo.
    */
   void sortByTempo() {
+    // Use Collections.sort with a custom TempoComparator
     Collections.sort(myPlayList, new TempoComparator());
   }
 
@@ -83,6 +90,4 @@ public class PlayList {
     return soFar + "}";
   }
 }
-
-
 
