@@ -1,0 +1,23 @@
+Team memeber:
+
+Aiqiu Zhang
+
+Elevator pitch:
+
+Parse an input resume PDF file (probably read input text to get the file path)
+Read job description and/or additional specifications (e.g. job description) via input text (or not, to just get general revision suggestions)
+Access the OpenAI LLM through their platform's API, feed user input into LLM
+Display LLM suggestions for revision alongside original resume text for comparison (actually generating a PDF with the revisions would be cool but probably difficult)
+
+Rough draft list of classes:
+
+ResumeReview
+Contains the main method
+ResumeReviewTests
+Contains unit tests
+ResumeReviewModel
+Manages internal state of the program (input and output text for LLM, may need additional logic for prompt engineering) and interacts with the OpenAI API
+ResumeReviewView
+Reads user input and displays program output
+ResumeReviewController
+Provides methods that allow the model and view to interact; receives input from view, forwards it to the model as appropriate, and sends resulting output to the view
